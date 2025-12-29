@@ -1,0 +1,32 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: etude-service
+          uri: lb://etude-service
+          predicates:
+            - Path=/etude/**
+          filters:
+            - StripPrefix=1
+        - id: etudiant-service
+          uri: lb://etudiant-service
+          predicates:
+            - Path=/etudiant/**
+          filters:
+            - StripPrefix=1
+        - id: module-service
+          uri: lb://module-service
+          predicates:
+            - Path=/module/**
+          filters:
+            - StripPrefix=1
