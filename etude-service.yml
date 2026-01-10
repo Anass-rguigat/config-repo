@@ -22,3 +22,7 @@ spring:
 etudiant:
   service:
     url: ${ETUDIANT_SERVICE_URL:http://etudiant-service:8083}
+
+module:
+  service:
+    url: ${MODULE_SERVICE_URL:http://module-service:8085}
