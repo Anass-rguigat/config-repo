@@ -6,7 +6,7 @@ spring:
     name: etudiant-service
   
   datasource:
-    url: "jdbc:mysql://mysql-etudiant:3306/etudiant_db?useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true"
+    url: "jdbc:mysql://mysql-etudiant:3306/etudiant_db?useSSL=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true"
     username: "root"
     password: "root"
     driver-class-name: "com.mysql.cj.jdbc.Driver"
@@ -18,4 +18,4 @@ spring:
     properties:
       hibernate:
         format_sql: true
-    database-plat
+    database-platform: "org.hibernate.dialect.MySQL8Dialect"
